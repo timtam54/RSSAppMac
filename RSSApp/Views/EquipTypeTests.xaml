@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RSSApp.Views.EquipTypeTests"
+              xmlns:local="clr-namespace:RSSApp.Models"
+             x:DataType="local:EquipTypeTest"
+             Title="EquipTypeTests">
+    <VerticalStackLayout>
+        <Label 
+            Text="Test"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+         <Entry Placeholder="Test"
+            Text="{Binding Test}"
+            PlaceholderColor="Navy" />
+         <Label 
+            Text="Severity"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry Placeholder="Severity"
+            Text="{Binding Severity}"
+            PlaceholderColor="Navy" />
+
+        <Button Clicked="Button_Clicked" Text="Save"></Button>
+    </VerticalStackLayout>
+</ContentPage>

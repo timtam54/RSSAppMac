@@ -3,9 +3,9 @@ using RSSApp.Models;
 
 namespace RSSApp.Services
 {
-	public interface IClientRepository
+	public interface IEmployeeRepository
     {
-		Task<List<Client>> Clients();
+		Task<List<Employee>> Employees();
 	}
 }
 

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RSSApp.Views.InspEquipPhotos"
+             Title="InspEquipPhotos"
+              xmlns:model="clr-namespace:RSSApp.Models"
+             x:DataType="ViewModel:InspPhotoViewModel"
+             xmlns:ViewModel="clr-namespace:RSSApp.Models">
+    <VerticalStackLayout>
+         <Button Clicked="Button_Clicked" Text="Add Image"></Button>
+          <CollectionView ItemsSource="{Binding InspPhotos}" x:Name="InspPhotosList">
+         <CollectionView.ItemTemplate>
+          <DataTemplate x:DataType="model:InspPhoto">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125" >
+                            <Grid Padding="0" ColumnDefinitions="125,*">
+                        <Image Aspect="AspectFill" Source="{Binding photoname}" WidthRequest="125" HeightRequest="125"> 
+
+                        </Image>
+                    <StackLayout Grid.Column="1" Padding="10" VerticalOptions="Center">
+                   
+                    <Label Text="{Binding photoname}"></Label>
+                        </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                  </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+    </CollectionView>
+        <Button Clicked="Button_Clicked" Text="Add Image"></Button>
+    </VerticalStackLayout>
+</ContentPage>

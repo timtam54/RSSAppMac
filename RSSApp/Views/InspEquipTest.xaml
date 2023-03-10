@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RSSApp.Views.InspEquipTest"
+             Title="Inspection Items Tests"
+             xmlns:model="clr-namespace:RSSApp.Models"
+             x:DataType="ViewModel:InspEquipTypeTestViewModel"
+             xmlns:ViewModel="clr-namespace:RSSApp.Models"
+    >
+    <VerticalStackLayout>
+       
+       <Button Text="Add New Test" Clicked="Button_AddNew"></Button>
+          <CollectionView ItemsSource="{Binding InspEquipTypeTests}" x:Name="InspectionList">
+         <CollectionView.ItemTemplate>
+          <DataTemplate x:DataType="model:InspEquipTypeTestRpt">
+              <HorizontalStackLayout HorizontalOptions="CenterAndExpand" >
+                   <Label Text="{Binding EquipTypeTest}"></Label>
+                   <Button  CommandParameter="{Binding id}"
+                            Clicked="Button_Clicked" Text="{Binding Reason}"></Button>
+
+                                      <Button  CommandParameter="{Binding id}"
+                            Clicked="Button_Delete" Text="X"></Button>
+
+                    <Label Text="{Binding Pass}"></Label>
+              </HorizontalStackLayout>
+                    
+                  </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+    </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

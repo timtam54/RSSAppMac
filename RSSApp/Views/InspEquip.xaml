@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RSSApp.Views.InspEquip"
+              xmlns:model="clr-namespace:RSSApp.Models"
+             Title="Inspection Item Detail">
+             <!--  x:DataType="local:InspEquip" -->
+  
+
+    <VerticalStackLayout Grid.Column="2">
+        <Label Text="Manufacturer"></Label>
+        <Entry Placeholder=""
+            Text="{Binding Manufacturer}"
+            PlaceholderColor="Navy" />
+
+        <Label Text="Installer"></Label>
+        <Entry Placeholder=""
+            Text="{Binding Installer}"
+            PlaceholderColor="Navy" />
+
+         <Label Text="Rating"></Label>
+                <Entry Placeholder=""
+            Text="{Binding Rating}"
+            PlaceholderColor="Navy" />
+
+         <Label Text="SerialNo"></Label>
+                <Entry Placeholder=""
+            Text="{Binding SerialNo}"
+            PlaceholderColor="Navy" />
+
+            <Label Text="Location"></Label>
+                <Entry Placeholder=""
+            Text="{Binding Location}"
+            PlaceholderColor="Navy" />
+        <Label Text="Notes"></Label>
+                <Entry Placeholder=""
+            Text="{Binding Notes}"
+            PlaceholderColor="Navy" />
+
+         <Label Text="Equipment Type"></Label>
+           <Picker FontSize="20" Title="Equipment Type" x:Name="EquipTypeID" ItemsSource="{Binding Et}" SelectedItem="{Binding SelEquipType, Mode=TwoWay}"
+        ItemDisplayBinding="{Binding Text,Mode=TwoWay}" />
+        <Button Clicked="Button_SaveClose" Text="Save/Close"></Button>
+        <Button Clicked="Button_Clicked" Text="Photos"></Button>
+                <Button Clicked="TestClicked" Text="Tests"></Button>
+    </VerticalStackLayout>
+</ContentPage>

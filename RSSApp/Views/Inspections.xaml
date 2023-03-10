@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RSSApp.Views.Inspections"
+             Title="Inspections"
+             xmlns:model="clr-namespace:RSSApp.Models"
+             x:DataType="ViewModel:InspectionsViewModel"
+             xmlns:ViewModel="clr-namespace:RSSApp.Models"
+    >
+    <VerticalStackLayout>
+        <Button Clicked="Button_Clicked_1" Text="Map View" ></Button>
+
+         <CollectionView ItemsSource="{Binding InspectionViews}" x:Name="InspectionList">
+         <CollectionView.ItemTemplate>
+          <DataTemplate x:DataType="model:InspectionView">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125" >
+                            <Grid Padding="0" ColumnDefinitions="125,*">
+                        <Image Aspect="AspectFill" Source="{Binding Photo}" WidthRequest="125" HeightRequest="125"> 
+
+                        </Image>
+                    <StackLayout Grid.Column="1" Padding="10" VerticalOptions="Center">
+                    <Button  CommandParameter="{Binding id}" Clicked="Button_Clicked" Text="{Binding ClientName}"></Button>
+                    <Label Text="{Binding Address}"></Label>
+                        </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                  </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+    </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
